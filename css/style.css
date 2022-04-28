@@ -8,6 +8,9 @@
     --negro: #402f47;
 }
 
+
+    
+
 main{
     display: flex;
     width: 100%;
@@ -15,6 +18,18 @@ main{
     justify-content: center;
     align-items: center;
 }
+
+    /* main .logoBienvenida{
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+        main .logoBienvenida .iconoCorazon{
+            font-size: 150px;
+        } */
 
     main .carta{
         position: relative;
@@ -29,6 +44,7 @@ main{
         -ms-transform: perspective(1000px);
         -o-transform: perspective(1000px);
         box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
+        border-radius: 20px;
         border-radius: 20px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
@@ -49,27 +65,22 @@ main{
         -o-border-radius: 0px;
     }
 
-        /*
-        *-----------------------------------------------
-        *Start carta contenedor
-        *-----------------------------------------------
-        */
         main .carta .hojaExterior{
+            transition: transform 1s, border-radius 1s .1s;
+            -webkit-transition: transform 1s, border-radius 1s .1s;
+            -moz-transition: transform 1s, border-radius 1s .1s;
+            -ms-transition: transform 1s, border-radius 1s .1s;
+            -o-transition: transform 1s, border-radius 1s .1s;
+            border: 20px solid var(--negro);
+            color: #fff;
             position: relative;
             width: 50%;
             height: 100%;
             z-index: 1;
+            background-color: #000;
+            box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
             transform-style: preserve-3d;
-            transition: 1s;
-            /*transition: transform 1s, border-radius 1s .1s;
-            -webkit-transition: 1s;
-            -moz-transition: 1s;
-            -ms-transition: 1s;
-            -o-transition: 1s;
-            */box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
-            overflow: hidden;
-            border: 20px solid var(--negro);
-}
+        }
 
         main .carta .hojaExterior:first-child{
             transform-origin: left;
@@ -107,107 +118,72 @@ main{
             border-bottom-left-radius: 20px;
         }
 
-        /*
-        *-----------------------------------------------
-        *End carta contenedor
-        *-----------------------------------------------
-        */
-
-            /*
-            *-----------------------------------------------
-            *Start del corazon
-            *-----------------------------------------------
-            */
-            main .carta .hojaExterior .ladoExterno, main .carta .hojaExterior .ladoInterno{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                transform-style: preserve-3d;
-                backface-visibility: hidden;
-                -webkit-backface-visibility: hidden;
-            }
-
-            main .carta .hojaExterior .ladoInterno{
-                display: flex;
-                flex-wrap: wrap;
-                column-gap: 10%;
-                justify-content: space-around;
-                align-items: center;
-                color: red;
-                font-size: 50px;
-                background-color: var(--negro);
-                transform: rotateY(180deg);
-                -webkit-transform: rotateY(180deg);
-                -moz-transform: rotateY(180deg);
-                -ms-transform: rotateY(180deg);
-                -o-transform: rotateY(180deg);
-}
-
-            main .carta .hojaExterior .ladoExterno{
-                background-color: var(--rosa);
-            }
-
-                main .carta .hojaExterior .ladoExterno .love{
-                    width: 150px;
-                    height: 150px;
-                    transform: rotate(45deg);
-                    background: red;
-                    -webkit-transform: rotate(45deg);
-                    -moz-transform: rotate(45deg);
-                    -ms-transform: rotate(45deg);
-                    -o-transform: rotate(45deg);
-                    position: absolute;
-                    top: calc(50% - 75px);
-                    transform-style: preserve-3d;
-                }
-
-                main .carta .hojaExterior:first-child .ladoExterno .love{
-                    left: calc(80% - 3px);
-                }
-
-                main .carta .hojaExterior:last-child .ladoExterno .love{
-                    right: calc(80% - 3px);
-                }
-
-                main .carta .hojaExterior .ladoExterno .love:before{
-                    content: "";
-                    height: 150px;
-                    width: 150px;
-                    border-radius: 50%;
-                    background: red;
-                    position: absolute;
-                }
-
-                main .carta .hojaExterior:first-child .ladoExterno .love:before{
-                    top: 0;
-                    left: -75px;
-                }
-
-                main .carta .hojaExterior:last-child .ladoExterno .love:before{
-                    top: -75px;
-                    left: 0px;
-                }
-            /*
-            *-----------------------------------------------
-            *End del corazon
-            *-----------------------------------------------
-            */
-
-            /*
-            *-----------------------------------------------
-            *Start carta contenedor detras
-            *-----------------------------------------------
-            */
-
-            
+        
 
 
+        main .carta .hojaExterior .ladoExterno{
+            background-color: var(--rosa);
+        }
 
+        main .carta .hojaExterior .ladoExterno, main .carta .hojaExterior .ladoInterno{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
 
-            /*
-            *-----------------------------------------------
-            *End carta contenedor detras
-            *-----------------------------------------------
-            */
+        main .carta .hojaExterior .ladoInterno{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10%;
+            justify-content: space-around;
+            align-items: center;
+            color: red;
+            font-size: 50px;
+            background-color: var(--negro);
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+        }
+
+    main .carta .contenido{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .carta .contenido .glider-contain{
+        width: 100%;
+        height: 100%;
+    }
+
+    main .carta .contenido .glider-contain .glider{
+        width: 100%;
+        height: 100%;
+    }
+
+    main .carta .contenido .glider-contain .glider .glider-track{
+        width: 100%;
+        height: 100%;
+    }
+
+        main .carta .contenido .card{
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
