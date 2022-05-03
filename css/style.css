@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
 *, *::after, *::before{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -17,6 +20,7 @@ main{
     height: 100vh;
     justify-content: center;
     align-items: center;
+    padding: 30px;
 }
 
     /* main .logoBienvenida{
@@ -35,7 +39,8 @@ main{
         position: relative;
         max-width: 600px;
         width: 50%;
-        height: 400px;
+        max-height: 1000px;
+        height: 75%;
         display: flex;
         transform-style: preserve-3d;
         transform: perspective(1000px);
@@ -66,11 +71,11 @@ main{
     }
 
         main .carta .hojaExterior{
-            transition: transform 1s, border-radius 1s .1s;
-            -webkit-transition: transform 1s, border-radius 1s .1s;
-            -moz-transition: transform 1s, border-radius 1s .1s;
-            -ms-transition: transform 1s, border-radius 1s .1s;
-            -o-transition: transform 1s, border-radius 1s .1s;
+            transition: transform 1s, border-radius 1s;
+            -webkit-transition: transform 1s, border-radius 1s;
+            -moz-transition: transform 1s, border-radius 1s;
+            -ms-transition: transform 1s, border-radius 1s;
+            -o-transition: transform 1s, border-radius 1s;
             border: 20px solid var(--negro);
             color: #fff;
             position: relative;
@@ -80,7 +85,7 @@ main{
             background-color: #000;
             box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
             transform-style: preserve-3d;
-        }
+}
 
         main .carta .hojaExterior:first-child{
             transform-origin: left;
@@ -104,6 +109,7 @@ main{
             border-bottom-right-radius: 20px;
             border-top-left-radius: 0px;
             border-bottom-left-radius: 0px;
+            transition-duration: 1s, .5s;
         }
 
         main .carta:hover .hojaExterior:last-child{
@@ -116,10 +122,8 @@ main{
             border-bottom-right-radius: 0px;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
+            transition-duration: 1s, 1.5s;
         }
-
-        
-
 
         main .carta .hojaExterior .ladoExterno{
             background-color: var(--rosa);
@@ -158,32 +162,248 @@ main{
         left: 0;
         width: 100%;
         height: 100%;
-        padding: 20px;
+        padding: 10px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-    }
+        font-family: 'Poppins', sans-serif;
+        background-color: #debadc;
+        border-bottom: 20px solid var(--negro);
+        border-top: 20px solid var(--negro);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        transition: border-radius 2s;
+        -webkit-transition: border-radius 2s;
+        -moz-transition: border-radius 2s;
+        -ms-transition: border-radius 2s;
+        -o-transition: border-radius 2s;
+}
 
-    main .carta .contenido .glider-contain{
-        width: 100%;
-        height: 100%;
-    }
+    main .carta:hover .contenido{
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+        transition-duration: .4s;
+}
 
-    main .carta .contenido .glider-contain .glider{
-        width: 100%;
-        height: 100%;
-    }
+        main .carta .contenido .opciones{
+            padding: 20px;
+            width: 100%;
+        }
 
-    main .carta .contenido .glider-contain .glider .glider-track{
-        width: 100%;
-        height: 100%;
-    }
+            main .carta .contenido .opciones ul{
+                display: flex;
+                justify-content: center;
+                border-bottom: 0;
+            }
 
-        main .carta .contenido .card{
+                main .carta .contenido .opciones ul li{
+                    list-style: none;
+                    background-color: #eee;
+                    padding: 8px 20px;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                }
+
+                main .carta .contenido .opciones ul li.active{
+                    background-color: #03a9f4;
+                    color: #fff;
+                }
+
+        main .carta .contenido .posiciones{
             width: 100%;
             height: 100%;
-            background-color: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
+
+            main .carta .contenido .posiciones .container{
+                background-color: red;
+                width: 100%;
+                height: 100%;
+            }
+
+@media screen and (max-width: 1300px){
+
+    main .carta .contenido .opciones{
+        padding: 15px;
+        width: 100%;
+    }
+
+            main .carta .contenido .opciones ul li{
+                padding: 10px;
+            }
+
+                main .carta .contenido .opciones ul li a{
+                    padding: 0;
+                    text-align: center;
+                }
+}
+
+@media screen and (max-width: 992px){
+
+        main .carta .hojaExterior{
+            border: 10px solid var(--negro);
+        }
+
+        main .carta .contenido .opciones{
+            padding: 0px 0px 10px;
+            width: 100%;
+        }
+
+                main .carta .contenido .opciones ul li{
+                    padding: 10px;
+                }
+
+                    main .carta .contenido .opciones ul li a{
+                        padding: 0;
+                        text-align: center;
+                    }
+
+
+}
+
+@media screen and (max-width: 768px){
+    main .carta{
+        width: 100%;
+        height: 80%;
+        max-width: 450px;
+    }
+
+    main .carta:hover{
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
+
+        main .carta .hojaExterior{
+            border: 15px solid var(--negro);
+        }
+
+        main .carta:hover .hojaExterior:first-child{
+            transform: rotateY(-359deg);
+            -webkit-transform: rotateY(-359deg);
+            -moz-transform: rotateY(-359deg);
+            -ms-transform: rotateY(-359deg);
+            -o-transform: rotateY(-359deg);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+}
+
+        main .carta:hover .hojaExterior:last-child{
+            transform: rotateY(359deg);
+            -webkit-transform: rotateY(359deg);
+            -moz-transform: rotateY(359deg);
+            -ms-transform: rotateY(359deg);
+            -o-transform: rotateY(359deg);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+        }
+
+        main .carta .contenido, main .carta:hover .contenido{
+            border: 10px solid var(--negro);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+        }
+
+            main .carta .contenido .opciones{
+                padding: 0px 0px 10px;
+            }
+
+                main .carta .contenido .opciones ul li{
+                    padding: 20px;
+                }
+
+                    main .carta .contenido .opciones ul li a{
+                        padding: 0;
+                        text-align: center;
+                    }
+
+}
+
+@media screen and (max-width: 576px){
+    main .carta{
+        flex-direction: column;
+        width: 100%;
+        height: 80%;
+        max-width: 400px;
+    }
+
+        main .carta .hojaExterior{
+            width: 100%;
+            height: 50%;
+            border: 10px solid var(--negro);
+        }
+
+        main .carta .hojaExterior:first-child{
+            transform-origin: top;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0px;
+        }
+
+        main .carta .hojaExterior:last-child{
+            transform-origin: bottom;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 0px;
+        }
+
+        main .carta:hover .hojaExterior:first-child{
+            transform: rotateX(359deg);
+            -webkit-transform: rotateX(359deg);
+            -moz-transform: rotateX(359deg);
+            -ms-transform: rotateX(359deg);
+            -o-transform: rotateX(359deg);
+            border-top-left-radius: 20px;
+}
+
+        main .carta:hover .hojaExterior:last-child{
+            transform: rotateX(-359deg);
+            -webkit-transform: rotateX(-359deg);
+            -moz-transform: rotateX(-359deg);
+            -ms-transform: rotateX(-359deg);
+            -o-transform: rotateX(-359deg);
+            border-bottom-right-radius: 20px;
+}
+
+        main .carta .contenido, main .carta:hover .contenido{
+            border: 10px solid var(--negro);
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+}
+
+            main .carta .contenido .opciones{
+                padding: 0px 0px 10px;
+                width: 100%;
+            }
+
+                    main .carta .contenido .opciones ul li{
+                        width: 100%;
+                        padding: 8px;
+                    }
+
+                        main .carta .contenido .opciones ul li a{
+                            padding: 0;
+                            text-align: center;
+                        }
+}
+
