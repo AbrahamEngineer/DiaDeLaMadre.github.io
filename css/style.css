@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap');
 
 *, *::after, *::before{
     margin: 0; padding: 0;
@@ -9,9 +10,14 @@
 :root{
     --rosa: #fe655f;
     --negro: #402f47;
+    --amarillo: #8ef154;
+    --sombreadoLetra: #d59fea;
+    --rojo: #f72b2b;
 }
 
-
+html{
+    font-size: 16px;
+}
     
 
 main{
@@ -21,25 +27,14 @@ main{
     justify-content: center;
     align-items: center;
     padding: 30px;
+    background: linear-gradient(190deg, var(--rosa) 0%, #fff, var(--sombreadoLetra));
 }
-
-    /* main .logoBienvenida{
-        position: fixed;
-        z-index: 1000;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-        main .logoBienvenida .iconoCorazon{
-            font-size: 150px;
-        } */
 
     main .carta{
         position: relative;
         max-width: 600px;
         width: 50%;
-        max-height: 1000px;
+        max-height: 500px;
         height: 75%;
         display: flex;
         transform-style: preserve-3d;
@@ -76,7 +71,7 @@ main{
             -moz-transition: transform 1s, border-radius 1s;
             -ms-transition: transform 1s, border-radius 1s;
             -o-transition: transform 1s, border-radius 1s;
-            border: 20px solid var(--negro);
+            border: 15px solid var(--negro);
             color: #fff;
             position: relative;
             width: 50%;
@@ -85,7 +80,8 @@ main{
             background-color: #000;
             box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
             transform-style: preserve-3d;
-}
+            background-color: var(--rosa);
+        }
 
         main .carta .hojaExterior:first-child{
             transform-origin: left;
@@ -127,7 +123,153 @@ main{
 
         main .carta .hojaExterior .ladoExterno{
             background-color: var(--rosa);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+}
+
+        main .carta .hojaExterior:first-child .ladoExterno,
+        main .carta .hojaExterior:last-child .ladoExterno{
+            display: flex;
         }
+
+        main .carta .hojaExterior:first-child .ladoExterno{
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        main .carta .hojaExterior:last-child .ladoExterno{
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+            main .carta .hojaExterior:last-child .ladoExterno .cuadro{
+                position: relative;
+                width: 120px;
+                height: 150px;
+                align-self: flex-end;
+                margin-right: 1.875rem;
+                text-align: center;
+                transform-style: preserve-3d;
+            }
+
+                main .carta .hojaExterior:last-child .ladoExterno .cuadro img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    transform-style: preserve-3d;
+                }
+
+                main .carta .hojaExterior:last-child .ladoExterno p{
+                    transform-style: preserve-3d;
+                }
+
+            main .carta .hojaExterior:last-child .ladoExterno h1{
+                position: relative;
+                text-align: center;
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 3rem;
+                text-shadow: 
+                0px 0px 10px var(--sombreadoLetra), 0px 0px 30px var(--sombreadoLetra), 0px 0px 50px var(--sombreadoLetra), 0px 0px 70px var(--sombreadoLetra), 0px 0px 90px var(--sombreadoLetra), 0px 0px 110px var(--sombreadoLetra);
+                transform-style: preserve-3d;
+            }
+
+            main .carta .hojaExterior:first-child .ladoExterno p{
+                margin-bottom: 40px;
+                padding-left: 10px;
+                transform-style: preserve-3d;
+            }
+
+            main .carta .hojaExterior:first-child .ladoExterno .teamo{
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 1.875rem;
+                transform-style: preserve-3d;
+            }
+
+            main .carta .hojaExterior:first-child .ladoExterno .iconoCorazon {
+                width: 120px;
+                height: 120px;
+                transform: rotate(45deg);
+                background: var(--rojo);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                margin: 0 auto 40%;
+                animation: beating 2s ease infinite;
+                -webkit-animation: beating 2s ease infinite;
+                transform-style: preserve-3d;
+            }
+
+            main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before,
+            main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:after {
+                content: "";
+                height: 120px;
+                width: 120px;
+                border-radius: 50%;
+                background: var(--rojo);
+                position: absolute;
+                transform-style: preserve-3d;
+            }
+
+            main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before {
+                top: 0;
+                left: -60px;
+            }
+
+            main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:after {
+                top: -60px;
+            }
+
+            @keyframes beating {
+                0% {
+                    transform: rotate(45deg) scale(1);
+                    -webkit-transform: rotate(45deg) scale(1);
+                    -moz-transform: rotate(45deg) scale(1);
+                    -ms-transform: rotate(45deg) scale(1);
+                    -o-transform: rotate(45deg) scale(1);
+                }
+
+                50% {
+                  transform: rotate(45deg) scale(1.15);
+                  -webkit-transform: rotate(45deg) scale(1.15);
+                  -moz-transform: rotate(45deg) scale(1.15);
+                  -ms-transform: rotate(45deg) scale(1.15);
+                  -o-transform: rotate(45deg) scale(1.15);
+}
+
+                100% {
+                    transform: rotate(45deg) scale(1);
+                    -webkit-transform: rotate(45deg) scale(1);
+                    -moz-transform: rotate(45deg) scale(1);
+                    -ms-transform: rotate(45deg) scale(1);
+                    -o-transform: rotate(45deg) scale(1);
+                }
+            }
 
         main .carta .hojaExterior .ladoExterno, main .carta .hojaExterior .ladoInterno{
             position: absolute;
@@ -142,19 +284,32 @@ main{
 
         main .carta .hojaExterior .ladoInterno{
             display: flex;
+            width: 100%;
+            height: 100%;
             flex-wrap: wrap;
             column-gap: 10%;
             justify-content: space-around;
             align-items: center;
-            color: red;
-            font-size: 50px;
+            color: var(--rojo);
+            font-size: 3.125rem;
+            transition: transform 1s;
             background-color: var(--negro);
             transform: rotateY(180deg);
             -webkit-transform: rotateY(180deg);
             -moz-transform: rotateY(180deg);
             -ms-transform: rotateY(180deg);
             -o-transform: rotateY(180deg);
+            -webkit-transition: transform 1s;
+            -moz-transition: transform 1s;
+            -ms-transition: transform 1s;
+            -o-transition: transform 1s;
         }
+
+            main .carta .hojaExterior .ladoInterno i{
+                transform-style: preserve-3d;
+            }
+
+            
 
     main .carta .contenido{
         position: absolute;
@@ -166,6 +321,7 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transform-style: preserve-3d;
         align-items: center;
         font-family: 'Poppins', sans-serif;
         background-color: #debadc;
@@ -193,22 +349,25 @@ main{
 }
 
         main .carta .contenido .opciones{
-            padding: 20px;
+            padding: 10px;
             width: 100%;
+            transform-style: preserve-3d;
         }
 
             main .carta .contenido .opciones ul{
                 display: flex;
                 justify-content: center;
                 border-bottom: 0;
+                transform-style: preserve-3d;
             }
 
                 main .carta .contenido .opciones ul li{
                     list-style: none;
                     background-color: #eee;
-                    padding: 8px 20px;
+                    padding: 8px 10px;
                     letter-spacing: 1px;
                     cursor: pointer;
+                    transform-style: preserve-3d;
                 }
 
                 main .carta .contenido .opciones ul li.active{
@@ -219,19 +378,106 @@ main{
         main .carta .contenido .posiciones{
             width: 100%;
             height: 100%;
+            transform-style: preserve-3d;
         }
 
             main .carta .contenido .posiciones .container{
-                background-color: red;
+                border: 10px double var(--rosa);
+                background-color: #eaeaea;
                 width: 100%;
                 height: 100%;
+                transform-style: preserve-3d;
             }
 
+            main .carta .contenido .posiciones .container.imagenes-content{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+            }
+
+                main .carta .contenido .posiciones .container.imagenes-content .swiper{
+                    width: 100%;
+                    height: 83%;
+                }
+
+                main .carta .contenido .posiciones .container.imagenes-content .swiper-button-prev, main .carta .contenido .posiciones .container.imagenes-content .swiper-button-next{
+                    top: 90%;
+                    color: var(--rojo);
+                }
+
+                main .carta .contenido .posiciones .container.imagenes-content .swiper-button-prev{
+                    left: 40%;
+                }
+
+                main .carta .contenido .posiciones .container.imagenes-content .swiper-button-next{
+                    right: 40%;
+                }
+
+                main .carta .contenido .posiciones .container.imagenes-content .swiper-button-prev:after, main .carta .contenido .posiciones .container.imagenes-content .swiper-button-next:after{
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+
+            .img{
+                border-radius: 10px;
+                background-color: blue;
+                text-align: center;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+}
+
+                .img img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    object-fit: cover;
+                }
+
 @media screen and (max-width: 1300px){
+
+    main .carta{
+        max-width: 650px;
+        width: 50%;
+    }
+
+        main .carta .contenido{
+            justify-content: center;
+        }
+
+            main section .contenido .tab-content.posiciones{
+                max-height: 350px;
+            }
+
+    main .carta .hojaExterior:first-child .ladoExterno .iconoCorazon, main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before,
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:after{
+        width: 100px;
+        height: 100px;
+    }
+
+    main .carta .hojaExterior:first-child .ladoExterno .teamo{
+        margin-top: 30px;
+    }
+
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before {
+        top: 0;
+        left: -50px;
+    }
+
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:after {
+        top: -50px;
+    }
 
     main .carta .contenido .opciones{
         padding: 15px;
         width: 100%;
+        
     }
 
             main .carta .contenido .opciones ul li{
@@ -245,6 +491,14 @@ main{
 }
 
 @media screen and (max-width: 992px){
+
+    html{
+        font-size: 14px;
+    }
+
+    main{
+        padding: 10px;
+    }
 
         main .carta .hojaExterior{
             border: 10px solid var(--negro);
@@ -264,10 +518,36 @@ main{
                         text-align: center;
                     }
 
+    main .carta .hojaExterior:first-child .ladoExterno .iconoCorazon, 
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before,
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:after{
+        width: 80px;
+        height: 80px;
+    }
+
+    main .carta .hojaExterior:first-child .ladoExterno .teamo{
+        margin-top: 80px;
+    }
+
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before {
+        top: 0;
+        left: -40px;
+    }
+
+    main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:after {
+        top: -40px;
+    }
+
+    main .carta .hojaExterior:last-child .ladoExterno .cuadro{
+        margin-right: 0;
+        align-self: center;
+    }
+
 
 }
 
 @media screen and (max-width: 768px){
+
     main .carta{
         width: 100%;
         height: 80%;
@@ -337,10 +617,14 @@ main{
 }
 
 @media screen and (max-width: 576px){
+    html{
+        font-size: 12px;
+    }
+
     main .carta{
         flex-direction: column;
         width: 100%;
-        height: 80%;
+        height: 85%;
         max-width: 400px;
     }
 
@@ -357,12 +641,33 @@ main{
             border-bottom-left-radius: 0px;
         }
 
+        main .carta .hojaExterior:first-child .ladoExterno{
+            justify-content: space-around;
+            align-items: center;
+        }
+
+            main .carta .hojaExterior:first-child .ladoExterno p{
+                padding-left: 0;
+            }
+
+            main .carta .hojaExterior:first-child .ladoExterno .teamo{
+                margin: 0;
+            }
+
         main .carta .hojaExterior:last-child{
             transform-origin: bottom;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             border-top-right-radius: 0px;
         }
+
+            main .carta .hojaExterior:last-child .ladoExterno h1{
+                font-size: 2.3rem;
+            }
+
+            main .carta .hojaExterior:last-child .ladoExterno{
+                padding: 5px;
+            }
 
         main .carta:hover .hojaExterior:first-child{
             transform: rotateX(359deg);
@@ -381,6 +686,10 @@ main{
             -o-transform: rotateX(-359deg);
             border-bottom-right-radius: 20px;
 }
+
+            main .carta .hojaExterior:first-child .ladoExterno .iconoCorazon{
+                margin: auto;
+            }
 
         main .carta .contenido, main .carta:hover .contenido{
             border: 10px solid var(--negro);
@@ -406,4 +715,3 @@ main{
                             text-align: center;
                         }
 }
-
