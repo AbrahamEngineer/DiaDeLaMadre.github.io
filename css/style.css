@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Poppins:ital,wght@1,100&display=swap');
 
 *, *::after, *::before{
     margin: 0; padding: 0;
@@ -18,7 +18,10 @@
 html{
     font-size: 16px;
 }
-    
+
+#btnCerrar{
+    display: none;
+}
 
 main{
     display: flex;
@@ -57,7 +60,7 @@ main{
         -o-transition: border-radius 1s;
     }
 
-    main .carta:hover{
+    main .carta.hover{
         border-radius: 0px;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
@@ -66,22 +69,22 @@ main{
     }
 
         main .carta .hojaExterior{
-            transition: transform 1s, border-radius 1s;
-            -webkit-transition: transform 1s, border-radius 1s;
-            -moz-transition: transform 1s, border-radius 1s;
-            -ms-transition: transform 1s, border-radius 1s;
-            -o-transition: transform 1s, border-radius 1s;
+            transition: transform 1.5s, border-radius 1s;
+            -webkit-transition: transform 1.5s, border-radius 1s;
+            -moz-transition: transform 1.5s, border-radius 1s;
+            -ms-transition: transform 1.5s, border-radius 1s;
+            -o-transition: transform 1.5s, border-radius 1s;
             border: 15px solid var(--negro);
             color: #fff;
             position: relative;
             width: 50%;
             height: 100%;
-            z-index: 1;
+            z-index: 1000;
             background-color: #000;
             box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
             transform-style: preserve-3d;
             background-color: var(--rosa);
-        }
+}
 
         main .carta .hojaExterior:first-child{
             transform-origin: left;
@@ -95,7 +98,7 @@ main{
             border-bottom-right-radius: 20px;
         }
 
-        main .carta:hover .hojaExterior:first-child{
+        main .carta.hover .hojaExterior:first-child{
             transform: rotateY(-180deg);
             -webkit-transform: rotateY(-180deg);
             -moz-transform: rotateY(-180deg);
@@ -108,7 +111,7 @@ main{
             transition-duration: 1s, .5s;
         }
 
-        main .carta:hover .hojaExterior:last-child{
+        main .carta.hover .hojaExterior:last-child{
             transform: rotateY(180deg);
             -webkit-transform: rotateY(180deg);
             -moz-transform: rotateY(180deg);
@@ -120,17 +123,6 @@ main{
             border-bottom-left-radius: 20px;
             transition-duration: 1s, 1.5s;
         }
-
-        main .carta .hojaExterior .ladoExterno{
-            background-color: var(--rosa);
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            -ms-border-radius: 20px;
-            -o-border-radius: 20px;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-}
 
         main .carta .hojaExterior:first-child .ladoExterno,
         main .carta .hojaExterior:last-child .ladoExterno{
@@ -180,10 +172,6 @@ main{
                     transform-style: preserve-3d;
                 }
 
-                main .carta .hojaExterior:last-child .ladoExterno p{
-                    transform-style: preserve-3d;
-                }
-
             main .carta .hojaExterior:last-child .ladoExterno h1{
                 position: relative;
                 text-align: center;
@@ -194,10 +182,12 @@ main{
                 transform-style: preserve-3d;
             }
 
-            main .carta .hojaExterior:first-child .ladoExterno p{
+            main .carta .hojaExterior .ladoExterno p{
                 margin-bottom: 40px;
-                padding-left: 10px;
-                transform-style: preserve-3d;
+                padding-left: 15px;
+                font-size: 20px;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
             }
 
             main .carta .hojaExterior:first-child .ladoExterno .teamo{
@@ -206,8 +196,9 @@ main{
                 padding: 0;
                 width: 100%;
                 text-align: center;
-                font-size: 1.875rem;
+                font-size: 3rem;
                 transform-style: preserve-3d;
+                font-family: 'Cormorant Garamond', serif;
             }
 
             main .carta .hojaExterior:first-child .ladoExterno .iconoCorazon {
@@ -222,7 +213,8 @@ main{
                 margin: 0 auto 40%;
                 animation: beating 2s ease infinite;
                 -webkit-animation: beating 2s ease infinite;
-                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
             }
 
             main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before,
@@ -233,7 +225,8 @@ main{
                 border-radius: 50%;
                 background: var(--rojo);
                 position: absolute;
-                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
             }
 
             main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before {
@@ -280,6 +273,15 @@ main{
             transform-style: preserve-3d;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
+        }
+
+        main .carta .hojaExterior .ladoExterno{
+            background-color: var(--rosa);
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
         }
 
         main .carta .hojaExterior .ladoInterno{
@@ -339,7 +341,7 @@ main{
         -o-transition: border-radius 2s;
 }
 
-    main .carta:hover .contenido{
+    main .carta.hover .contenido{
         border-radius: 0px;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
@@ -363,17 +365,29 @@ main{
 
                 main .carta .contenido .opciones ul li{
                     list-style: none;
-                    background-color: #eee;
+                    background-color: var(--negro);
                     padding: 8px 10px;
                     letter-spacing: 1px;
                     cursor: pointer;
                     transform-style: preserve-3d;
                 }
 
-                main .carta .contenido .opciones ul li.active{
-                    background-color: #03a9f4;
-                    color: #fff;
-                }
+
+                    main .carta .contenido .opciones ul li a{
+                        color: #fff;
+                        border-radius: 0.25rem;
+                        -webkit-border-radius: 0.25rem;
+                        -moz-border-radius: 0.25rem;
+                        -ms-border-radius: 0.25rem;
+                        -o-border-radius: 0.25rem;
+                        font-weight: 700;
+                    }
+
+                    main .carta .contenido .opciones ul li a.active{
+                        background-color: var(--rosa);
+                        color: #fff;
+                        border: 0px;
+                    }
 
         main .carta .contenido .posiciones{
             width: 100%;
@@ -388,6 +402,65 @@ main{
                 height: 100%;
                 transform-style: preserve-3d;
             }
+
+            main .carta .contenido .posiciones #mensajes{
+                position: relative;
+                
+            }
+
+                main .carta .contenido .posiciones #mensajes .cuaderno{
+                    display: flex;
+                    position: relative;
+                    left: 50%;
+                    width: 50%;
+                    height: 100%;
+                    transform-style: preserve-3d;
+                }
+
+                    main .carta .contenido .posiciones #mensajes .cuaderno .hoja{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: red;
+                        border: 1px solid black;
+                        transform-origin: left;
+                        transition: transform 1s;
+                        -webkit-transition: transform 1s;
+                        -moz-transition: transform 1s;
+                        -ms-transition: transform 1s;
+                        -o-transition: transform 1s;
+}
+
+                    main .carta .contenido .posiciones #mensajes .cuaderno .hoja.pasar{
+                        transform: rotateY(-180deg);
+                        -webkit-transform: rotateY(-180deg);
+                        -moz-transform: rotateY(-180deg);
+                        -ms-transform: rotateY(-180deg);
+                        -o-transform: rotateY(-180deg);
+                    }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja div{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transform-style: preserve-3d;
+                            backface-visibility: hidden;
+                            -webkit-backface-visibility: hidden;
+                        }
+
+                main .carta .contenido .posiciones .container .video{
+                    width: 100%;
+                    height: 100%;
+                    padding: 15px;
+                }
+
+                    main .carta .contenido .posiciones .container .video iframe{
+                        width: 100%;
+                        height: 100%;
+                    }
 
             main .carta .contenido .posiciones .container.imagenes-content{
                 position: relative;
@@ -526,7 +599,7 @@ main{
     }
 
     main .carta .hojaExterior:first-child .ladoExterno .teamo{
-        margin-top: 80px;
+        margin-top: 70px;
     }
 
     main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before {
@@ -548,25 +621,30 @@ main{
 
 @media screen and (max-width: 768px){
 
+    #btnCerrar{
+        display: block;
+    }
+
     main .carta{
         width: 100%;
         height: 80%;
         max-width: 450px;
+        
     }
 
-    main .carta:hover{
+    main .carta.hover{
         border-radius: 20px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;
         -o-border-radius: 20px;
-}
+    }
 
         main .carta .hojaExterior{
-            border: 15px solid var(--negro);
+            border: 10px solid var(--negro);
         }
 
-        main .carta:hover .hojaExterior:first-child{
+        main .carta.hover .hojaExterior:first-child{
             transform: rotateY(-359deg);
             -webkit-transform: rotateY(-359deg);
             -moz-transform: rotateY(-359deg);
@@ -579,7 +657,7 @@ main{
             -o-border-radius: 20px;
 }
 
-        main .carta:hover .hojaExterior:last-child{
+        main .carta.hover .hojaExterior:last-child{
             transform: rotateY(359deg);
             -webkit-transform: rotateY(359deg);
             -moz-transform: rotateY(359deg);
@@ -592,7 +670,7 @@ main{
             -o-border-radius: 20px;
         }
 
-        main .carta .contenido, main .carta:hover .contenido{
+        main .carta .contenido, main .carta.hover .contenido{
             border: 10px solid var(--negro);
             border-radius: 20px;
             -webkit-border-radius: 20px;
@@ -625,7 +703,7 @@ main{
         flex-direction: column;
         width: 100%;
         height: 85%;
-        max-width: 400px;
+        max-width: 300px;
     }
 
         main .carta .hojaExterior{
@@ -648,10 +726,11 @@ main{
 
             main .carta .hojaExterior:first-child .ladoExterno p{
                 padding-left: 0;
+                text-align: center;
             }
 
             main .carta .hojaExterior:first-child .ladoExterno .teamo{
-                margin: 0;
+                margin: 50px 0 0 0;
             }
 
         main .carta .hojaExterior:last-child{
@@ -669,7 +748,12 @@ main{
                 padding: 5px;
             }
 
-        main .carta:hover .hojaExterior:first-child{
+            main .carta .hojaExterior:last-child .ladoExterno p{
+                padding: 0;
+                margin: 0;
+            }
+
+        main .carta.hover .hojaExterior:first-child{
             transform: rotateX(359deg);
             -webkit-transform: rotateX(359deg);
             -moz-transform: rotateX(359deg);
@@ -678,7 +762,7 @@ main{
             border-top-left-radius: 20px;
 }
 
-        main .carta:hover .hojaExterior:last-child{
+        main .carta.hover .hojaExterior:last-child{
             transform: rotateX(-359deg);
             -webkit-transform: rotateX(-359deg);
             -moz-transform: rotateX(-359deg);
@@ -691,7 +775,7 @@ main{
                 margin: auto;
             }
 
-        main .carta .contenido, main .carta:hover .contenido{
+        main .carta .contenido, main .carta.hover .contenido{
             border: 10px solid var(--negro);
             border-radius: 10px;
             -webkit-border-radius: 10px;
@@ -714,4 +798,9 @@ main{
                             padding: 0;
                             text-align: center;
                         }
+
+                        main section .contenido .tab-content.posiciones{
+                            max-height: 300px;
+                        }
+
 }

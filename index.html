@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Swiper demo</title>
+    <title>Día de la madre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -16,7 +16,7 @@
 <body>
 
     <main>
-        <section class="carta">
+        <section class="carta" id="carta">
             <div class="hojaExterior">
                 <div class="ladoExterno">
                     <p>Para: Mi hermosa madre Lucy</p>
@@ -52,60 +52,87 @@
                             <a class="nav-link" data-toggle="tab" href="#imagenes">Imagenes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#canciones">Canciones</a>
+                            <a class="nav-link" data-toggle="tab" href="#canciones">Canción</a>
+                        </li>
+                        <li class="nav-item" id="btnCerrar">
+                            <a class="nav-link" data-toggle="tab" href="#"><i class='bx bx-x'></i></a>
                         </li>
                     </ul>
                 </div>
                 <div class="tab-content posiciones">
                     <div id="mensajes" class="container tab-pane active">
-                        <p>hola</p>
+                        <div class="cuaderno">
+                            <div class="hoja">
+                                <div class="delante"></div>
+                                <div class="detras"></div>
+                            </div>
+                            <div class="hoja">
+                                <div class="delante"></div>
+                                <div class="detras"></div>
+                            </div>
+                            <div class="hoja">
+                                <div class="delante"></div>
+                                <div class="detras"></div>
+                            </div>
+                            <div class="hoja">
+                                <div class="delante"></div>
+                                <div class="detras"></div>
+                            </div>
+                            <div class="hoja">
+                                <div class="delante"></div>
+                                <div class="detras"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="imagenes-content container tab-pane" id="imagenes">
-                        <!-- Swiper -->
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 2.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 3.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 4.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 5.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 6.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 7.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 8.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
-                                    <img src="img/icono.jpg" alt="">
+                                    <img src="img/imagen 9.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide img">
+                                    <img src="img/imagen 1.jpeg" alt="">
                                 </div>
                                 <div class="swiper-slide img">
                                     <img src="img/icono.jpg" alt="">
                                 </div>
                             </div>
-                            <div class="swiper-pagination"></div>
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
                     <div id="canciones" class="container tab-pane">
-                        <p>espero que bien</p>
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iUQZLA2NxG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="hojaExterior">
                 <div class="ladoExterno">
                     <div class="cuadro">
-                        <img src="img/icono.jpg" alt="">
+                        <img src="img/imagen 2.jpeg" alt="">
                     </div>
                     <h1>Feliz día de las madres</h1>
                     <p>De: Abraham</p>
@@ -131,11 +158,8 @@
         </section>
     </main>
 
-
-    <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
