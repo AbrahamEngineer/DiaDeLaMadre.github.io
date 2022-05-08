@@ -15,6 +15,18 @@
     --rojo: #f72b2b;
 }
 
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+    border-color: transparent;
+}
+
+.efectoSpan{
+    color: #ff0000;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
 html{
     font-size: 16px;
 }
@@ -22,6 +34,74 @@ html{
 #btnCerrar{
     display: none;
 }
+
+.fondoImagen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, .7);
+    transition: visibility .5s, opacity .5s;
+    -webkit-transition: visibility .5s, opacity .5s;
+    -moz-transition: visibility .5s, opacity .5s;
+    -ms-transition: visibility .5s, opacity .5s;
+    -o-transition: visibility .5s, opacity .5s;
+}
+
+.fondoImagen.abierto{
+    visibility: visible;
+    opacity: 1;
+}
+
+    .fondoImagen .icono{
+        z-index: 1100;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+    }
+
+    .fondoImagen .icono .botonCerrar{
+        text-align: center;
+        color: #fff;
+        font-size: 40px;
+    }
+
+    .fondoImagen .icono .botonCerrar i{
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transition: background-color .5s;
+        -webkit-transition: background-color .5s;
+        -moz-transition: background-color .5s;
+        -ms-transition: background-color .5s;
+        -o-transition: background-color .5s;
+}
+
+    .fondoImagen .icono .botonCerrar i:hover{
+        background-color: var(--rosa); 
+    }
+
+    .fondoImagen img{
+        width: 100%;
+        height: 80%;
+        object-fit: contain;
+    }
+
 
 main{
     display: flex;
@@ -83,7 +163,7 @@ main{
             background-color: #000;
             box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
             transform-style: preserve-3d;
-            background-color: var(--rosa);
+            background-color: var(--negro);
 }
 
         main .carta .hojaExterior:first-child{
@@ -305,6 +385,7 @@ main{
             -moz-transition: transform 1s;
             -ms-transition: transform 1s;
             -o-transition: transform 1s;
+            
         }
 
             main .carta .hojaExterior .ladoInterno i{
@@ -383,6 +464,12 @@ main{
                         font-weight: 700;
                     }
 
+                    main .carta .contenido .opciones ul li:last-child a:active{
+                        background-color: var(--rosa);
+                        color: #fff;
+                        border: 0px;
+                    }
+
                     main .carta .contenido .opciones ul li a.active{
                         background-color: var(--rosa);
                         color: #fff;
@@ -391,7 +478,7 @@ main{
 
         main .carta .contenido .posiciones{
             width: 100%;
-            height: 100%;
+            height: 80%;
             transform-style: preserve-3d;
         }
 
@@ -405,7 +492,6 @@ main{
 
             main .carta .contenido .posiciones #mensajes{
                 position: relative;
-                
             }
 
                 main .carta .contenido .posiciones #mensajes .cuaderno{
@@ -418,18 +504,57 @@ main{
                 }
 
                     main .carta .contenido .posiciones #mensajes .cuaderno .hoja{
+                        font-weight: 700;
+                        color: #000;
+                        z-index: 1;
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        background-color: red;
-                        border: 1px solid black;
+                        background-color: white;
                         transform-origin: left;
-                        transition: transform 1s;
-                        -webkit-transition: transform 1s;
-                        -moz-transition: transform 1s;
-                        -ms-transition: transform 1s;
-                        -o-transition: transform 1s;
-}
+                        transition: transform .8s;
+                        -webkit-transition: transform .8s;
+                        -moz-transition: transform .8s;
+                        -ms-transition: transform .8s;
+                        -o-transition: transform .8s;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px;
+                        text-align: justify;
+                    }
+
+                    main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada .titulo{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #000;
+                            text-align: center;
+                            font-family: 'Cormorant Garamond', serif;
+                            
+                        }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada .imgRosa{
+                            
+                            width: 60%;
+                            height: 100%;
+                            max-height: 195px;
+                        }
+
+                            main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada .imgRosa img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
 
                     main .carta .contenido .posiciones #mensajes .cuaderno .hoja.pasar{
                         transform: rotateY(-180deg);
@@ -437,19 +562,39 @@ main{
                         -moz-transform: rotateY(-180deg);
                         -ms-transform: rotateY(-180deg);
                         -o-transform: rotateY(-180deg);
+                        transition-delay: .8s;
                     }
 
-                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja div{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            transform-style: preserve-3d;
-                            backface-visibility: hidden;
-                            -webkit-backface-visibility: hidden;
-                        }
+                    main .carta .contenido .posiciones #mensajes .cuaderno .hoja:before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fff;
+                        transform-origin: right;
+                        transform: scaleX(0);
+                        -webkit-transform: scaleX(0);
+                        -moz-transform: scaleX(0);
+                        -ms-transform: scaleX(0);
+                        -o-transform: scaleX(0);
+                        transition: transform 0s .25s;
+                        -webkit-transition: transform 0s .25s;
+                        -moz-transition: transform 0s .25s;
+                        -ms-transition: transform 0s .25s;
+                        -o-transition: transform 0s .25s;
+}
+
+                    main .carta .contenido .posiciones #mensajes .cuaderno .hoja.pasar:before{
+                        transform: scaleX(1);
+                        -webkit-transform: scaleX(1);
+                        -moz-transform: scaleX(1);
+                        -ms-transform: scaleX(1);
+                        -o-transform: scaleX(1);
+                        transition-delay: .4s;
+                        transition-duration: .6s;
+                    }
 
                 main .carta .contenido .posiciones .container .video{
                     width: 100%;
@@ -494,7 +639,6 @@ main{
 
             .img{
                 border-radius: 10px;
-                background-color: blue;
                 text-align: center;
                 -webkit-border-radius: 10px;
                 -moz-border-radius: 10px;
@@ -525,7 +669,7 @@ main{
         }
 
             main section .contenido .tab-content.posiciones{
-                max-height: 350px;
+                max-height: 300px;
             }
 
     main .carta .hojaExterior:first-child .ladoExterno .iconoCorazon, main .carta .hojaExterior .ladoExterno:first-child .iconoCorazon:before,
@@ -558,7 +702,7 @@ main{
             }
 
                 main .carta .contenido .opciones ul li a{
-                    padding: 0;
+                    padding: 10px;
                     text-align: center;
                 }
 }
@@ -587,7 +731,7 @@ main{
                 }
 
                     main .carta .contenido .opciones ul li a{
-                        padding: 0;
+                        padding: 10px;
                         text-align: center;
                     }
 
@@ -782,6 +926,7 @@ main{
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
+            padding: 5px;
 }
 
             main .carta .contenido .opciones{
@@ -802,5 +947,75 @@ main{
                         main section .contenido .tab-content.posiciones{
                             max-height: 300px;
                         }
+
+                    main .carta .contenido .posiciones #mensajes{
+                        padding: 0;
+                    }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno{
+                            display: flex;
+                            position: relative;
+                            left: 0;
+                            top: 50%;
+                            width: 100%;
+                            height: 50%;
+                            transform-style: preserve-3d;
+                        }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja{
+                            z-index: 1;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid black;
+                            transform-origin: top;
+                            transition: transform .8s;
+                            -webkit-transition: transform .8s;
+                            -moz-transition: transform .8s;
+                            -ms-transition: transform .8s;
+                            -o-transition: transform .8s;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 10px;
+                            text-align: justify;
+                        }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                            main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada .titulo{
+                                width: 50%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: #000;
+                                
+                            }
+
+                            main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada .imgRosa{
+                                width: 50%;
+                                height: 100%;
+                            }
+
+                                main .carta .contenido .posiciones #mensajes .cuaderno .hoja.portada .imgRosa img{
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+
+                        main .carta .contenido .posiciones #mensajes .cuaderno .hoja.pasar{
+                            transform: rotateX(180deg);
+                            -webkit-transform: rotateX(180deg);
+                            -moz-transform: rotateX(180deg);
+                            -ms-transform: rotateX(180deg);
+                            -o-transform: rotateX(180deg);
+}
+    
 
 }

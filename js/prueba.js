@@ -5,10 +5,6 @@ var swiper = new Swiper(".mySwiper", {
 
     slidesPerGroup: 1,
 
-    autoplay: {
-        delay: 5000,
-    },
-
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
@@ -56,26 +52,26 @@ var swiper = new Swiper(".mySwiper", {
 window.addEventListener('load', (e) => {
     eventosCarta();
     pasarHojas();
+    efectoImagenes();
 });
 
 
 function eventosCarta() {
     const carta = document.getElementById('carta');
     const btnCerrar = document.getElementById('btnCerrar');
-    const iconoCorazon = document.querySelector('.iconoCorazon');
+    const fondoImagen = document.querySelector('.fondoImagen');
+
+    carta.addEventListener('mouseover', (e) => {
+        carta.classList.add("hover");
+    });
 
     if (screen.width > 768) {
-        carta.addEventListener('mouseover', (e) => {
-            carta.classList.add("hover");
-        });
         carta.addEventListener('mouseout', (e) => {
-            carta.classList.remove("hover");
+            if(!fondoImagen.classList.contains("abierto")){
+                carta.classList.remove("hover");
+            }
         });
     } else {
-        iconoCorazon.addEventListener('click', (e) => {
-            carta.classList.add("hover");
-        });
-
         btnCerrar.addEventListener('click', (e) => {
             carta.classList.remove("hover");
         });
@@ -83,10 +79,45 @@ function eventosCarta() {
 }
 
 function pasarHojas() {
-    const hojas = document.querySelectorAll('.carta .contenido .posiciones #mensajes .cuaderno .hoja');
-    hojas.forEach(hoja => {
-        hoja.addEventListener('click', (e) => {
-            hoja.classList.toggle('pasar');
+    const hojas = document.querySelectorAll('main .carta .contenido .posiciones #mensajes .cuaderno .hoja');
+    let limite = hojas.length*10;
+    console.log(hojas);
+
+    for(let i = 0; i < hojas.length; i++){
+        const limiteInterior = limite;
+        hojas[i].addEventListener('click',(e)=>{
+            console.log(i);
+            if(hojas[i].classList.contains("pasar")){
+                if(i===0 || !hojas[i-1].classList.contains("pasar")){
+                    hojas[i].classList.remove("pasar");
+                    hojas[i].removeAttribute("style");
+                }
+            }else{
+                if(i===5 || hojas[i+1].classList.contains("pasar")){
+                    hojas[i].classList.add("pasar");
+                    hojas[i].setAttribute("style","z-index:"+ limiteInterior);
+                }
+            }
+        });
+        limite -= 10; 
+    }
+}
+
+function efectoImagenes(){
+    const imagenes = document.querySelectorAll('.img img');
+    const fondoImagen = document.querySelector('.fondoImagen');
+    
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('click',(e)=>{
+            const ruta = imagen.getAttribute("src");
+            fondoImagen.lastElementChild.setAttribute("src", ruta);
+            console.log(fondoImagen.firstElementChild);
+            fondoImagen.classList.add("abierto");
         });
     });
+
+    fondoImagen.firstElementChild.addEventListener('click',(e)=>{
+        fondoImagen.classList.remove("abierto");
+    });
+    
 }
